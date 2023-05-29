@@ -164,8 +164,6 @@ const Hero = () => {
                                         <FaFacebook className="w-6 h-6 hover:text-[#1877F2] transition-colors duration-300" />
                                     </div>
                                 </a>
-
-
                             </div>
                         </div>
                     </div>
