@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
-const Hero = () => {
+const Hero: React.FC = () => {
     useEffect(() => {
         const carouselItems = Array.from(document.querySelectorAll('[data-carousel-item]'));
         const prevButton: any = document.querySelector('[data-carousel-prev]');

@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 
-const LayoutComponent = ({ children }) => {
+const LayoutComponent: React.FC = ({ children }) => {
     return (
         <div className='h-screen'>
             <Navbar />
