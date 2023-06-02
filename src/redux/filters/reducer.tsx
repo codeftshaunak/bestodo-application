@@ -1,5 +1,5 @@
 import { COLORCHANGE, STATUSCHANGE } from "./actionTypes"
-import { initialState } from "./initialState"
+import initialState from "./initialState"
 
 const reducer = (state = initialState, action: any) => {
     switch (action.type) {

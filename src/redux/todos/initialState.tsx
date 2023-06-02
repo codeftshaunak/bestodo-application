@@ -1,4 +1,4 @@
-export const initalState = [{
+const initalState = [{
     id: 1,
     text: "Live life in a simple way",
     color: "red",
@@ -9,3 +9,5 @@ export const initalState = [{
     color: "green",
     completed: false
 }]
+
+export default initalState;

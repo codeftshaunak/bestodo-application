@@ -1,7 +1,11 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React, { ReactNode } from 'react';
+import Navbar from './Navbar';
 
-const LayoutComponent: React.FC = ({ children }) => {
+interface LayoutProps {
+    children: ReactNode;
+}
+
+const LayoutComponent: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className='h-screen'>
             <Navbar />
@@ -9,7 +13,7 @@ const LayoutComponent: React.FC = ({ children }) => {
                 {children}
             </div>
         </div>
-    )
+    );
 }
 
-export default LayoutComponent
+export default LayoutComponent;

@@ -1,16 +1,42 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { statusChange } from '../redux/filters/action';
+
+
 
 const TodoFooter = () => {
+    const todos = useSelector((state: any) => state.todos);
+    const filters = useSelector((state: any) => state.filters)
+    const { status, colors } = filters;
+    const taskIncomplete = todos.filter((todo: any) => !todo.completed).length;
+    const dispatch = useDispatch();
+
+    const handleStatusChange = (status: string) => {
+        dispatch(statusChange(status))
+    }
+
+    const taskRemain = (taskNo: number) => {
+        switch (taskNo) {
+            case 0:
+                return "No Task Left"
+            case 1:
+                return "1 Task Left"
+            default:
+                return `${taskNo} Tasks Left`
+        }
+    }
+
+
     return (
         <div>
             <div className="mt-4 flex justify-between text-xs text-gray-500">
-                <p>2 tasks left</p>
+                <p>{taskRemain(taskIncomplete)}</p>
                 <ul className="flex space-x-1 items-center text-xs">
-                    <li className="cursor-pointer font-bold">All</li>
+                    <li className={`cursor-pointer ${status == "All" && "font-bold"}`} onClick={() => handleStatusChange("All")}>All</li>
                     <li>|</li>
-                    <li className="cursor-pointer">Incomplete</li>
+                    <li className={`cursor-pointer ${status == "Incomplete" && "font-bold"}`} onClick={() => handleStatusChange("Incomplete")}>Incomplete</li>
                     <li>|</li>
-                    <li className="cursor-pointer">Complete</li>
+                    <li className={`cursor-pointer ${status == "Complete" && "font-bold"}`} onClick={() => handleStatusChange("Complete")}>Complete</li>
                     <li></li>
                     <li></li>
                     <li
