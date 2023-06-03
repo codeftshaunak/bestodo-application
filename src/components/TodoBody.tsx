@@ -25,7 +25,7 @@ const TodoBody: React.FC = () => {
                     .filter((todo: any) => {
                         const { colors } = filters;
                         if (colors.length > 0) {
-                            return colors.includes(todo.color)
+                            return colors.includes(todo?.color)
                         } else {
                             return true;
                         }
