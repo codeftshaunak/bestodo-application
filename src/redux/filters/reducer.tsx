@@ -16,14 +16,15 @@ const reducer = (state = initialState, action: any) => {
                     return {
                         ...state,
                         colors: [
-                            ...state[0].colors,
+                            ...state.colors,
                             color
                         ]
+
                     }
-                case 'remove':
+                case 'removed':
                     return {
                         ...state,
-                        colors: state[0].colors.filter(existingColor => existingColor !== color)
+                        colors: state.colors.filter((existingColor) => existingColor !== color)
                     }
 
                 default:

@@ -3,9 +3,9 @@ export interface StateItem {
     colors: string[];
 }
 
-const initialState: StateItem[] = [{
+const initialState: StateItem = {
     status: "All",
     colors: []
-}];
+};
 
 export default initialState;
