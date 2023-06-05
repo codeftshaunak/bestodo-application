@@ -8,8 +8,10 @@ const index = () => {
     return (
         <LayoutComponent>
             <Provider store={store}>
-
-                <Todo />
+                <section className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply vh-100">
+                    <br />
+                    <Todo />
+                </section>
             </Provider>
         </LayoutComponent>
     )
